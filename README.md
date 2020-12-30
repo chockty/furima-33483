@@ -22,8 +22,7 @@ Things you may want to cover:
 | --------------------- | ---------- | ------------------------- |
 | nickname              | string     | null: false               |
 | email                 | string     | null: false, unique: true |
-| password              | string     | null: false               |
-| password_confirmation | string     | null: false               |
+| encrypted_password    | string     | null: false               |
 | full_name             | string     | null: false               |
 | reading_name          | string     | null: false               |
 
