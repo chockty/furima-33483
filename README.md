@@ -61,8 +61,6 @@ Things you may want to cover:
 
 | Column                     | Type       | Options                        |
 | -------------------------- | ---------- | ------------------------------ |
-| price                      | integer    | null: false                    |
-| info                       | text       | null: false                    |
 | postal_code                | integer    | null: false                    |
 | prefecture_id              | integer    | null: false                    |
 | city                       | string     | null: false                    |
