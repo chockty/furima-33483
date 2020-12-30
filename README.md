@@ -49,7 +49,7 @@ Things you may want to cover:
 | user                       | references | null: false, foreign_key :true |
 
 ### Association
--- has_many :purchases
+-- has_one :purchase
 -- belongs_to :user
 -- belongs_to_active_hash :item_category_id
 -- belongs_to_active_hash :item_shipping_id
