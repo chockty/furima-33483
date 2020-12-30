@@ -62,19 +62,13 @@ Things you may want to cover:
 
 | Column                     | Type       | Options                        |
 | -------------------------- | ---------- | ------------------------------ |
-| postal_code                | string     | null: false                    |
-| prefecture_id              | integer    | null: false                    |
-| city                       | string     | null: false                    |
-| addresses                  | string     | null: false                    |
-| building                   | string     |                                |
-| phone_number               | string     | null: false                    |
 | user                       | references | null: false, foreign_key :true |
 | item                       | references | null: false, foreign_key :true |
 
 ### Association
 -- belongs_to :item
 -- belongs_to :user
--- belongs_to_active_hash :item_prefecture_id
+-- has_one :shippingaddress
 
 
 ## shippingaddressesテーブル
@@ -87,11 +81,11 @@ Things you may want to cover:
 | addresses                  | string     | null: false                    |
 | building                   | string     |                                |
 | phone_number               | string     | null: false                    |
-| purchase                   | references | null: false                    |
+| purchase                   | references | null: false, foreign_key :true |
 
 ### Association
 -- belongs_to :purchase
--- belongs_to_active_hash :item_prefecture_id
+-- belongs_to_active_hash :prefecture_id
 
 
 * How to run the test suite
