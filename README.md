@@ -31,8 +31,8 @@ Things you may want to cover:
 
 
 ### Association
--- has_many :items
--- has_many :purchases
+- has_many :items
+- has_many :purchases
 
 
 ## itemsテーブル
@@ -50,12 +50,12 @@ Things you may want to cover:
 | user                       | references | null: false, foreign_key :true |
 
 ### Association
--- has_one :purchase
--- belongs_to :user
--- belongs_to_active_hash :item_category_id
--- belongs_to_active_hash :item_shipping_id
--- belongs_to_active_hash :prefecture_id
--- belongs_to_active_hash :item_scheduled_delivery_id
+- has_one :purchase
+- belongs_to :user
+- belongs_to_active_hash :item_category_id
+- belongs_to_active_hash :item_shipping_id
+- belongs_to_active_hash :prefecture_id
+- belongs_to_active_hash :item_scheduled_delivery_id
 
 
 ## purchasesテーブル
@@ -66,9 +66,9 @@ Things you may want to cover:
 | item                       | references | null: false, foreign_key :true |
 
 ### Association
--- belongs_to :item
--- belongs_to :user
--- has_one :shippingaddress
+- belongs_to :item
+- belongs_to :user
+- has_one :shippingaddress
 
 
 ## shippingaddressesテーブル
@@ -84,8 +84,8 @@ Things you may want to cover:
 | purchase                   | references | null: false, foreign_key :true |
 
 ### Association
--- belongs_to :purchase
--- belongs_to_active_hash :prefecture_id
+- belongs_to :purchase
+- belongs_to_active_hash :prefecture_id
 
 
 * How to run the test suite
