@@ -7,8 +7,8 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :password, format: { with: PASSWORD_REGEX, message: 'Include both letters and numbers' }
-    validates :first_name, :last_name, presence: true, format: { with: /\A[ぁ-んァ-ン一-龥]/, message: 'Full-width characters' }
-    validates :first_reading_name, :last_reading_name, presence: true, format: { with: /\A[ァ-ヶー－]+\z/, message: 'Full-width katakana characters' }
+    validates :first_name, :last_name, format: { with: /\A[ぁ-んァ-ン一-龥]/, message: 'Full-width characters' }
+    validates :first_reading_name, :last_reading_name, format: { with: /\A[ァ-ヶー－]+\z/, message: 'Full-width katakana characters' }
     validates :nickname, :birth_date
   end
   
