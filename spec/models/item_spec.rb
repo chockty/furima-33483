@@ -54,8 +54,7 @@ RSpec.describe Item, type: :model do
     it '価格が空の場合、商品の出品ができない' do
       @item.price = nil
       @item.valid?
-      expect(@item.errors.full_messages).to include("Price can't be blank", 'Price Out of setting range',
-                                                    'Price Half-width number')
+      expect(@item.errors.full_messages).to include("Price can't be blank")
     end
     it 'ユーザが紐づいていない場合、商品の出品ができない' do
       @item.user = nil
@@ -75,7 +74,7 @@ RSpec.describe Item, type: :model do
     it '価格が半角数字ではない場合、商品の出品ができない' do
       @item.price = 'abcあいう'
       @item.valid?
-      expect(@item.errors.full_messages).to include('Price Half-width number', 'Price Out of setting range')
+      expect(@item.errors.full_messages).to include('Price Half-width number')
     end
   end
 end
