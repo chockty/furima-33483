@@ -13,7 +13,6 @@ class PurchasesController < ApplicationController
       @purchase_shippingaddress.save
       redirect_to root_path
     else
-      @item = Item.find(params[:item_id])
       render action: :index
     end
   end
@@ -28,9 +27,7 @@ class PurchasesController < ApplicationController
 
   def judge_ok_or_not
     @item = Item.find(params[:item_id])
-    if @item.user.id == current_user.id
-      redirect_to root_path
-    elsif @item.purchase
+    if @item.user.id == current_user.id || @item.purchase
       redirect_to root_path
     end
   end
