@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :basic_auth, only: [:index]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :find_one_item, only: [:show, :edit, :update, :destroy]
 
@@ -55,4 +56,11 @@ class ItemsController < ApplicationController
   def find_one_item
     @item = Item.find(params[:id])
   end
+
+  def basic_auth
+    authenticate_or_request_with_http_basic do |username, password|
+      username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]
+    end
+  end
+
 end
